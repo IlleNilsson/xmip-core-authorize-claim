@@ -10,12 +10,12 @@
 [workspace]
 
 [package]
-name = "xmip-template-rust"
+name = "xmip-core-authorize-claim"
 version = "0.1.0"
 edition = "2024"
 license = "AGPL-3.0-or-later"
-repository = "https://github.com/IlleNilsson/xmip-template-rust"
-description = "Starter template for a Rust Xmip module repository."
+repository = "https://github.com/IlleNilsson/xmip-core-authorize-claim"
+description = "Authorize by claim: decides by a claim the identity carries, its value against a rule; a message-layer policy."
 publish = false
 
 [lib]
