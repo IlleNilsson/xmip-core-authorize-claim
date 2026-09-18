@@ -1,12 +1,6 @@
 # xmip-core-authorize-claim
 
-Authorize by claim: decides by a claim the identity carries, its value against a rule; a message-layer policy. A technology of
-[xmip-core-authorize](https://github.com/IlleNilsson/xmip-core-authorize).
-
-Declared and not yet written; `architecture.toml` carries the maturity. When
-it is written it implements `Authorizer`, one mechanism at one gate (ADR-0050).
-What it may depend on is `repository-model.md` section 4 and ADR-0044: its
-capability, and no sibling.
+Claim authorization: a claim the message identity carries — from a JWT, an ID token, a SAML assertion — its presence and its value against a rule; a message-layer policy. A technology of [xmip-core-authorize](https://github.com/IlleNilsson/xmip-core-authorize).
 
 ## Toolchain
 
