@@ -216,7 +216,7 @@ mod tests {
             ("iss", "https://idp.example"),
             ("groups", "staff"),
             ("groups", "approvers"),
-            ("tenant", "acme"),
+            ("tenant", "partner-x"),
         ]);
 
         let decision = approvers().decide(&facts, &Attempt::new(Action::Process, "Approval"));
@@ -244,7 +244,7 @@ mod tests {
         // Present and wrong is a different fault from absent, and the reason
         // has to let an operator tell a token from the wrong issuer apart from
         // a rule that names the wrong one.
-        let facts = token(&[("iss", "https://other.example"), ("tenant", "acme")]);
+        let facts = token(&[("iss", "https://other.example"), ("tenant", "partner-x")]);
 
         let decision = approvers().decide(&facts, &Attempt::new(Action::Process, "Approval"));
 
