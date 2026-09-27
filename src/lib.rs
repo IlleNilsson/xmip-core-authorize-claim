@@ -62,12 +62,7 @@ impl Required {
     /// The values the identity carries for this claim.
     #[must_use]
     pub fn values<'a>(&self, identity: &'a AuthenticatedIdentity) -> Vec<&'a str> {
-        identity
-            .evidence
-            .iter()
-            .filter(|(name, _)| *name == self.name)
-            .map(|(_, value)| value.as_str())
-            .collect()
+        identity.evidence_values(&self.name).collect()
     }
 
     /// Why this identity does not meet the requirement, or `None` where it
