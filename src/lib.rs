@@ -211,7 +211,7 @@ mod tests {
             ("iss", "https://idp.example"),
             ("groups", "staff"),
             ("groups", "approvers"),
-            ("tenant", "partner-x"),
+            ("tenant", "party-x"),
         ]);
 
         let decision = approvers().decide(&facts, &Attempt::new(Action::Process, "Approval"));
@@ -239,7 +239,7 @@ mod tests {
         // Present and wrong is a different fault from absent, and the reason
         // has to let an operator tell a token from the wrong issuer apart from
         // a rule that names the wrong one.
-        let facts = token(&[("iss", "https://other.example"), ("tenant", "partner-x")]);
+        let facts = token(&[("iss", "https://other.example"), ("tenant", "party-x")]);
 
         let decision = approvers().decide(&facts, &Attempt::new(Action::Process, "Approval"));
 
@@ -257,7 +257,7 @@ mod tests {
     fn a_point_the_policy_is_confined_away_from_is_left_to_the_next_policy() {
         let facts = token(&[]);
 
-        let decision = approvers().decide(&facts, &Attempt::new(Action::Receive, "partner-x"));
+        let decision = approvers().decide(&facts, &Attempt::new(Action::Receive, "party-x"));
 
         assert_eq!(decision, None);
     }
